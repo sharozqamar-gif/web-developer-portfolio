@@ -1,0 +1,285 @@
+:root {
+  --bg: #0f172a;
+  --text: #fff;
+  --card: #0b1220;
+  --primary: #ff4d6d;
+  --secondary: #22c55e;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.nav {
+  background: rgba(0,0,0,0.6);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #0b1220, #0f172a);
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  animation: fadeIn 1.5s ease;
+}
+
+.hero-content span {
+  color: var(--primary);
+}
+
+.hero-content p {
+  font-size: 24px;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+.hero-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  animation: fadeIn 2s ease;
+}
+
+.hero-icons a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+
+.features, .services, .projects, .about, .contact {
+  padding: 60px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.skills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills li {
+  background: var(--card);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: 2px solid var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--primary);
+}
+
+.footer {
+  padding: 20px 0;
+  text-align: center;
+  background: rgba(0,0,0,0.5);
+}
+
+.filter {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filter button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: var(--card);
+  color: #fff;
+  cursor: pointer;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background: var(--card);
+  color: #fff;
+}
+
+textarea {
+  height: 120px;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff;
+}
+
+/* =========================
+   Dark Mode Style
+   ========================= */
+body.dark {
+  --bg: #ffffff;
+  --text: #000000;
+  --card: #f2f2f2;
+  --primary: #ff4d6d;
+  --secondary: #22c55e;
+}
+
+body.dark .nav {
+  background: rgba(255,255,255,0.6);
+}
+
+body.dark .nav-links a {
+  color: #000;
+}
+
+body.dark .card {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+body.dark input,
+body.dark textarea {
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #000;
+}
+
+body.dark .btn {
+  color: #000;
+  border-color: var(--primary);
+}
+
+/* =========================
+   Mobile Responsive
+   ========================= */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    flex-direction: column;
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-detail {
+  padding: 60px 0;
+}
+
+.project-img {
+  width: 100%;
+  margin: 20px 0;
+  border-radius: 16px;
+}
+
+.testimonials {
+  padding: 60px 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
